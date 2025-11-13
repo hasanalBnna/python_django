@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellar UI Showcase</title>
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --secondary: #00cec9;
+      --bg: #f5f6fa;
+      --dark: #2d3436;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      animation: fadeIn 1s ease-in;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #dfe6e9;
+    }
+    .hero {
+      padding: 100px 40px;
+      text-align: center;
+      background: radial-gradient(circle at top left, #a29bfe, #81ecec);
+      color: white;
+    }
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-out;
+    }
+    .hero p {
+      font-size: 20px;
+      animation: fadeIn 2s ease-in;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+    }
+    .feature {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+    }
+    .feature i {
+      font-size: 40px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    .theme-toggle {
+      background-color: white;
+      color: var(--primary);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .theme-toggle:hover {
+      background-color: #dfe6e9;
+    }
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #eee;
+    }
+    .dark-mode header,
+    .dark-mode footer {
+      background-color: #000;
+    }
+    .dark-mode .feature {
+      background-color: #2d2d2d;
+      color: #eee;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Stellar UI</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Design That Dazzles</h2>
+    <p>Experience a stunning single-page UI crafted with pure HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <i>📱</i>
+      <h3>Responsive Design</h3>
+      <p>Looks great on phones, tablets, and desktops with adaptive layout and smooth transitions.</p>
+    </div>
+    <div class="feature">
+      <i>⚡</i>
+      <h3>Fast & Lightweight</h3>
+      <p>No external libraries — just clean, efficient code that loads instantly.</p>
+    </div>
+    <div class="feature">
+      <i>🎨</i>
+      <h3>Stylish Themes</h3>
+      <p>Switch between light and dark modes with a single click. Your eyes will thank you.</p>
+    </div>
+    <div class="feature">
+      <i>🧠</i>
+      <h3>Smart Animations</h3>
+      <p>Subtle motion effects bring the page to life without overwhelming the experience.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Stellar UI. Crafted with love and code.
+  </footer>
+</body>
+</html>
